@@ -23,7 +23,7 @@ public class FishAndSeaEndpoint {
     @ResponsePayload
     public GetFASResponse getFASbySpecie(@RequestPayload GetFASbySpecieRequest request) {
         GetFASResponse response = new GetFASResponse();
-        List<FishAndSeaEntity> entities= fishAndSeaRepository.findByspecieName(request.getText());
+        List<FishAndSeaEntity> entities= fishAndSeaRepository.findBySpecieName(request.getText());
         for (FishAndSeaEntity entity :entities) {
             FishAndSea balik = getFishAndSea(entity);
             response.getFishAndSea().add(balik);
@@ -35,7 +35,7 @@ public class FishAndSeaEndpoint {
     @ResponsePayload
     public GetFASResponse getFASbyRegion(@RequestPayload GetFASbyRegionRequest request) {
         GetFASResponse response = new GetFASResponse();
-        List<FishAndSeaEntity> entities= fishAndSeaRepository.findByregion(Season.valueOf(request.getText()));
+        List<FishAndSeaEntity> entities= fishAndSeaRepository.findByRegion(request.getText());
         for (FishAndSeaEntity entity :entities) {
             FishAndSea balik = getFishAndSea(entity);
             response.getFishAndSea().add(balik);
@@ -47,7 +47,7 @@ public class FishAndSeaEndpoint {
     @ResponsePayload
     public GetFASResponse getFASbySeason(@RequestPayload GetFASbySeasonRequest request) {
         GetFASResponse response = new GetFASResponse();
-        List<FishAndSeaEntity> entities= fishAndSeaRepository.findByseason(request.getText());
+        List<FishAndSeaEntity> entities= fishAndSeaRepository.findBySeason(Season.valueOf(request.getText()));
         for (FishAndSeaEntity entity :entities) {
             FishAndSea balik = getFishAndSea(entity);
             response.getFishAndSea().add(balik);
@@ -61,11 +61,11 @@ public class FishAndSeaEndpoint {
         balik.setFishingMethod(entity.getFishingMethod());
         balik.setFishPopulation(BigInteger.valueOf(entity.getFishPopulation()));
         balik.setRegion(entity.getRegion());
-        balik.setAverageSize(entity.getAverageSize());
         balik.setOverfishingRisk(entity.getOverfishingRisk());
-        balik.setSpeciesName(entity.getSpecieName());
+        balik.setSpecieName(entity.getSpecieName());
         balik.setSeason(entity.getSeason());
         balik.setWaterTemperature(entity.getWaterTemperature());
+        balik.setWaterPollutionLevel(entity.getWaterPollutionLevel());
         return balik;
     }
 }

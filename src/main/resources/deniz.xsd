@@ -36,15 +36,15 @@
 	
 	<xs:complexType name="FishAndSea">
         <xs:sequence>
-            <xs:element name="Species_Name" type="xs:string"/>
-			<xs:element name="Region" type="xs:string"/>
-			<xs:element name="Fishing_Method" type="xs:string"/>
-            <xs:element name="Fish_Population" type="xs:unsignedLong"/>
-			<xs:element name="Average_Size" type="xs:float"/>
-            <xs:element name="Overfishing_Risk" type="xs:string"/>
-            <xs:element name="Water_Temperature" type="xs:float"/>
-			<xs:element name="Water_Pollution_Level" type="xs:string"/>
-			<xs:element name="Season" type="tns:season"/>
+            <xs:element name="specieName" type="xs:string"/>
+			<xs:element name="region" type="xs:string"/>
+			<xs:element name="fishingMethod" type="xs:string"/>
+            <xs:element name="fishPopulation" type="xs:unsignedLong"/>
+			<xs:element name="averageSize" type="xs:float"/>
+            <xs:element name="overfishingRisk" type="xs:string"/>
+            <xs:element name="waterTemperature" type="xs:float"/>
+			<xs:element name="waterPollutionLevel" type="xs:string"/>
+			<xs:element name="season" type="tns:season"/>
         </xs:sequence>
     </xs:complexType>
 	

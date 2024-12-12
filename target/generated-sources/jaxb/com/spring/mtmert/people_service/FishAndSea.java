@@ -25,15 +25,15 @@ import jakarta.xml.bind.annotation.XmlType;
  *   <complexContent>
  *     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       <sequence>
- *         <element name="Species_Name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="Region" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="Fishing_Method" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="Fish_Population" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/>
- *         <element name="Average_Size" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="Overfishing_Risk" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="Water_Temperature" type="{http://www.w3.org/2001/XMLSchema}float"/>
- *         <element name="Water_Pollution_Level" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         <element name="Season" type="{http://spring.com/mtmert/people-service}season"/>
+ *         <element name="specieName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="region" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="fishingMethod" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="fishPopulation" type="{http://www.w3.org/2001/XMLSchema}unsignedLong"/>
+ *         <element name="averageSize" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *         <element name="overfishingRisk" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="waterTemperature" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *         <element name="waterPollutionLevel" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         <element name="season" type="{http://spring.com/mtmert/people-service}season"/>
  *       </sequence>
  *     </restriction>
  *   </complexContent>
@@ -44,7 +44,7 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FishAndSea", propOrder = {
-    "speciesName",
+    "specieName",
     "region",
     "fishingMethod",
     "fishPopulation",
@@ -56,49 +56,47 @@ import jakarta.xml.bind.annotation.XmlType;
 })
 public class FishAndSea {
 
-    @XmlElement(name = "Species_Name", required = true)
-    protected String speciesName;
-    @XmlElement(name = "Region", required = true)
+    @XmlElement(required = true)
+    protected String specieName;
+    @XmlElement(required = true)
     protected String region;
-    @XmlElement(name = "Fishing_Method", required = true)
+    @XmlElement(required = true)
     protected String fishingMethod;
-    @XmlElement(name = "Fish_Population", required = true)
+    @XmlElement(required = true)
     @XmlSchemaType(name = "unsignedLong")
     protected BigInteger fishPopulation;
-    @XmlElement(name = "Average_Size")
     protected float averageSize;
-    @XmlElement(name = "Overfishing_Risk", required = true)
+    @XmlElement(required = true)
     protected String overfishingRisk;
-    @XmlElement(name = "Water_Temperature")
     protected float waterTemperature;
-    @XmlElement(name = "Water_Pollution_Level", required = true)
+    @XmlElement(required = true)
     protected String waterPollutionLevel;
-    @XmlElement(name = "Season", required = true)
+    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected Season season;
 
     /**
-     * Gets the value of the speciesName property.
+     * Gets the value of the specieName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSpeciesName() {
-        return speciesName;
+    public String getSpecieName() {
+        return specieName;
     }
 
     /**
-     * Sets the value of the speciesName property.
+     * Sets the value of the specieName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSpeciesName(String value) {
-        this.speciesName = value;
+    public void setSpecieName(String value) {
+        this.specieName = value;
     }
 
     /**
