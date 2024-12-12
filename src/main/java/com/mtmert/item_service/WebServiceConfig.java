@@ -43,8 +43,21 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		return wsdl11Definition;
 	}
 
+	@Bean(name = "deniz")
+	public DefaultWsdl11Definition defaultWsdl11DefinitionSea(XsdSchema seaSchema) {
+		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+		wsdl11Definition.setPortTypeName("SeaPort");
+		wsdl11Definition.setLocationUri("/ws");
+		wsdl11Definition.setTargetNamespace("http://spring.com/mtmert/people-service");
+		wsdl11Definition.setSchema(seaSchema);
+		return wsdl11Definition;
+	}
+
 	@Bean
 	public XsdSchema peopleSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("people.xsd"));
 	}
+
+	@Bean
+	public XsdSchema seaSchema() {return new SimpleXsdSchema(new ClassPathResource("deniz.xsd"));}
 }

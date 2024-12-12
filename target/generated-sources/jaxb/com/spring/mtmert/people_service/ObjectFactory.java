@@ -36,63 +36,53 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetPersonRequest }
+     * Create an instance of {@link GetFASbySpecieRequest }
      * 
      * @return
-     *     the new instance of {@link GetPersonRequest }
+     *     the new instance of {@link GetFASbySpecieRequest }
      */
-    public GetPersonRequest createGetPersonRequest() {
-        return new GetPersonRequest();
+    public GetFASbySpecieRequest createGetFASbySpecieRequest() {
+        return new GetFASbySpecieRequest();
     }
 
     /**
-     * Create an instance of {@link GetPersonResponse }
+     * Create an instance of {@link GetFASbyRegionRequest }
      * 
      * @return
-     *     the new instance of {@link GetPersonResponse }
+     *     the new instance of {@link GetFASbyRegionRequest }
      */
-    public GetPersonResponse createGetPersonResponse() {
-        return new GetPersonResponse();
+    public GetFASbyRegionRequest createGetFASbyRegionRequest() {
+        return new GetFASbyRegionRequest();
     }
 
     /**
-     * Create an instance of {@link Person }
+     * Create an instance of {@link GetFASbySeasonRequest }
      * 
      * @return
-     *     the new instance of {@link Person }
+     *     the new instance of {@link GetFASbySeasonRequest }
      */
-    public Person createPerson() {
-        return new Person();
+    public GetFASbySeasonRequest createGetFASbySeasonRequest() {
+        return new GetFASbySeasonRequest();
     }
 
     /**
-     * Create an instance of {@link GetCountryRequest }
+     * Create an instance of {@link GetFASResponse }
      * 
      * @return
-     *     the new instance of {@link GetCountryRequest }
+     *     the new instance of {@link GetFASResponse }
      */
-    public GetCountryRequest createGetCountryRequest() {
-        return new GetCountryRequest();
+    public GetFASResponse createGetFASResponse() {
+        return new GetFASResponse();
     }
 
     /**
-     * Create an instance of {@link GetCountryResponse }
+     * Create an instance of {@link FishAndSea }
      * 
      * @return
-     *     the new instance of {@link GetCountryResponse }
+     *     the new instance of {@link FishAndSea }
      */
-    public GetCountryResponse createGetCountryResponse() {
-        return new GetCountryResponse();
-    }
-
-    /**
-     * Create an instance of {@link Country }
-     * 
-     * @return
-     *     the new instance of {@link Country }
-     */
-    public Country createCountry() {
-        return new Country();
+    public FishAndSea createFishAndSea() {
+        return new FishAndSea();
     }
 
 }
