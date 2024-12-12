@@ -1,0 +1,58 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.com/mtmert/people-service"
+           targetNamespace="http://spring.com/mtmert/people-service" elementFormDefault="qualified">
+
+    <xs:element name="getFASbySpecieRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="text" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	
+	<xs:element name="getFASbyRegionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="text" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	
+	<xs:element name="getFASbySeasonRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="text" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getFASResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="FishAndSea" type="tns:FishAndSea" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	
+	
+	<xs:complexType name="FishAndSea">
+        <xs:sequence>
+            <xs:element name="Species_Name" type="xs:string"/>
+			<xs:element name="Region" type="xs:string"/>
+			<xs:element name="Fishing_Method" type="xs:string"/>
+            <xs:element name="Fish_Population" type="xs:unsignedLong"/>
+			<xs:element name="Average_Size" type="xs:float"/>
+            <xs:element name="Overfishing_Risk" type="xs:string"/>
+            <xs:element name="Water_Temperature" type="xs:float"/>
+			<xs:element name="Water_Pollution_Level" type="xs:string"/>
+			<xs:element name="Season" type="tns:season"/>
+        </xs:sequence>
+    </xs:complexType>
+	
+	<xs:simpleType name="season">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Summer"/>
+            <xs:enumeration value="Monsoon"/>
+            <xs:enumeration value="Winter"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
